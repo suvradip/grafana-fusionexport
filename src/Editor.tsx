@@ -4,7 +4,7 @@ import { PanelEditorProps } from '@grafana/data';
 
 import { SimpleOptions } from './types';
 
-export class SimpleEditor extends PureComponent<PanelEditorProps<SimpleOptions>> {
+export class Editor extends PureComponent<PanelEditorProps<SimpleOptions>> {
   onHostChanged = ({ target }: any) => {
     this.props.onOptionsChange({ ...this.props.options, host: target.value });
   };
@@ -31,7 +31,6 @@ export class SimpleEditor extends PureComponent<PanelEditorProps<SimpleOptions>>
 
   render() {
     const { options } = this.props;
- 
 
     return (
       <div className="section-wrapper">

@@ -9,10 +9,10 @@ import { SimpleOptions } from 'types';
 
 interface Props extends PanelProps<SimpleOptions> {}
 
-interface IState {
+interface State {
   isBtnLoading: boolean;
 }
-export class FusionExport extends PureComponent<Props, IState> {
+export class FusionExport extends PureComponent<Props, State> {
   constructor(props: any) {
     super(props);
     this.state = {
