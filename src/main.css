@@ -1,0 +1,15 @@
+.section-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 2rem;
+}
+.section, div.editor-option {
+    display: block;
+}
+.section {
+    width: 40%;
+}
+.group {
+    margin-bottom: 2rem;
+}
