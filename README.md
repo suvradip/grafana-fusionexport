@@ -1,12 +1,6 @@
-# Simple React Panel
-[![CircleCI](https://circleci.com/gh/grafana/simple-react-panel.svg?style=svg)](https://circleci.com/gh/grafana/simple-react-panel)
-[![David Dependency Status](https://david-dm.org/grafana/simple-react-panel.svg)](https://david-dm.org/grafana/simple-react-panel)
-[![David Dev Dependency Status](https://david-dm.org/grafana/simple-react-panel/dev-status.svg)](https://david-dm.org/grafana/simple-react-panel/?type=dev)
-[![Known Vulnerabilities](https://snyk.io/test/github/grafana/simple-react-panel/badge.svg)](https://snyk.io/test/github/grafana/simple-react-panel)
-[![Maintainability](https://api.codeclimate.com/v1/badges/1dee2585eb412f913cbb/maintainability)](https://codeclimate.com/github/grafana/simple-react-panel/maintainability)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/1dee2585eb412f913cbb/test_coverage)](https://codeclimate.com/github/grafana/simple-react-panel/test_coverage)
+# FusionExport plugin for Grafana
 
-This is just a stub to show how you can create a basic visualization plugin.
+> This is a basic plugin to integrate FusionExport with Grafana and which helps you to export Grafana dashboard with FusionExport service.
 
 First, install dependencies:
 
@@ -33,3 +27,14 @@ To build the plugin run:
 ```BASH
 yarn build
 ```
+
+## How to use this plugin in your Grafana ?
+- Set up Grafana
+- Clone this repository into `/var/lib/grafana/plugins` or `data/plugins` (relative to grafana git repo if you’re running development version from source dir)
+- Run `yarn build` in repository directory
+- Restart your grafana server
+
+
+### Installation of FusionExport
+
+To install FusionExport you can follow our detailed instruction [here](https://www.fusioncharts.com/dev/exporting-charts/using-fusionexport/installation/install-fusionexport-server)
