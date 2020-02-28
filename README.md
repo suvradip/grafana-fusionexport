@@ -8,6 +8,12 @@ First, install dependencies:
 yarn install
 ```
 
+To build the plugin run:
+
+```BASH
+yarn build
+```
+
 To work with this plugin run:
 
 ```BASH
@@ -22,18 +28,12 @@ yarn watch
 
 This will run linting tools and apply prettier fix.
 
-To build the plugin run:
-
-```BASH
-yarn build
-```
-
 ## How to use this plugin in your Grafana ?
+
 - Set up Grafana
 - Clone this repository into `/var/lib/grafana/plugins` or `data/plugins` (relative to grafana git repo if you’re running development version from source dir)
 - Run `yarn build` in repository directory
 - Restart your grafana server
-
 
 ### Installation of FusionExport
 
