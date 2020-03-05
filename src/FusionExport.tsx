@@ -56,7 +56,6 @@ export class FusionExport extends PureComponent<Props, State> {
           templateFormat: options.format,
           panelIds,
           chartLayout: options.chartLayout,
-          layout: 'grafana',
           theme: options.theme
         },
         {
