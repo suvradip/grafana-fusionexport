@@ -52,6 +52,7 @@ div.editor-option {
 .toggle-switch input {
   width: 0px;
   height: 0px;
+  visibility: hidden;
 }
 
 .toggle-switch .slider {
