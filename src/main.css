@@ -1,15 +1,93 @@
 .section-wrapper {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin-top: 2rem;
+  display: block;
+  margin-top: 2rem;
 }
-.section, div.editor-option {
-    display: block;
+.section,
+div.editor-option {
+  display: block;
 }
 .section {
-    width: 40%;
+   width: 50%;
 }
 .group {
-    margin-bottom: 2rem;
+  margin-bottom: 2rem;
+}
+
+.normal-wrapper {
+    display: flex;
+    width: 100%;
+    /* justify-content: center;     */
+    justify-content: flex-start;
+    padding: 20px;
+}
+
+.fusionexport-dashboard-dl-btn {
+  color: #000;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.fusionexport-dashboard-dl-btn button {
+  min-width: 100px;
+  transition: 'all 0.5s';
+}
+
+.switch-group {
+    display: inline-block;
+    line-height: 2;
+}
+
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 28px;
+  margin: 0px 10px;
+}
+
+.switch-label {
+    /* padding: 0 10px; */
+}
+
+.toggle-switch input {
+  width: 0px;
+  height: 0px;
+  visibility: hidden;
+}
+
+.toggle-switch .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 30px;
+}
+
+.toggle-switch .slider:before {
+  position: absolute;
+  content: '';
+  height: 18px;
+  width: 18px;
+  top:5px;
+  left: 6px;
+  bottom: 6px;
+  background-color: #fff;
+  transition: 0.4s;
+  border-radius: 10px;
+}
+
+.toggle-switch input:checked + .slider {
+  background-color: #2196f3;
+}
+
+.toggle-switch input:focus + .slider {
+  box-shadow: #2196f3;
+}
+
+.toggle-switch input:checked + .slider::before {
+  transform: translateX(20px);
 }

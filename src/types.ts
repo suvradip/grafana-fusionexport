@@ -8,11 +8,13 @@ export interface SimpleOptions {
   fileName: string;
   dashboardUrl: string;
   token: string;
+  chartLayout: number;
+  theme: string
 }
 
 function getDBUrl() {
   const { origin, pathname } = window.location;
-  return origin + pathname + 500;
+  return origin + pathname;
 }
 
 export const defaults: SimpleOptions = {
@@ -25,4 +27,6 @@ export const defaults: SimpleOptions = {
   fileName: 'grafana-dashboard',
   dashboardUrl: getDBUrl(),
   token: '',
+  chartLayout: 1,
+  theme: 'light'
 };

@@ -1,6 +1,6 @@
 {
   "name": "grafana-fusionexport-plugin",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Grafana FusionExport Plugin",
   "scripts": {
     "build": "grafana-toolkit plugin:build",

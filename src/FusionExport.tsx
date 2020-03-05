@@ -6,6 +6,7 @@ import ReactLoading from 'react-loading';
 import './main.css';
 
 import { SimpleOptions } from 'types';
+import { string, number } from 'prop-types';
 
 interface Props extends PanelProps<SimpleOptions> {}
 
@@ -19,12 +20,32 @@ export class FusionExport extends PureComponent<Props, State> {
       isBtnLoading: false,
     };
   }
+
   exportDashboardAction = async () => {
-    const { options } = this.props;
+    const { options, id } = this.props;
     try {
       this.setState({ isBtnLoading: true });
       const endPoint = `${options.host}:${options.port}/api/v2.0/export`;
       const { origin, pathname } = new URL(options.dashboardUrl);
+
+      const panels = document.querySelectorAll('.react-grid-item');
+      const panelIds: object[] = [{ id: string, width: number, height: number }];
+
+      panels.forEach(ele => {
+        const elementId = ele.id;
+        if (elementId !== `panel-${id}`) {
+          const ele = document.getElementById(elementId) as any;
+         
+          const panel = {
+            id: ele.id.replace('panel-', ''),
+            width: ele ? ele.offsetWidth : 550,
+            height: ele ? ele.offsetHeight : 400,
+          };
+       
+          panelIds.push(panel);
+        }
+      });
+
       const { status, data } = await axios.post(
         endPoint,
         {
@@ -33,6 +54,9 @@ export class FusionExport extends PureComponent<Props, State> {
           token: options.token,
           source: 'grafana',
           templateFormat: options.format,
+          panelIds,
+          chartLayout: options.chartLayout,
+          theme: options.theme
         },
         {
           responseType: 'blob',
@@ -56,26 +80,9 @@ export class FusionExport extends PureComponent<Props, State> {
   render() {
     const { options } = this.props;
 
-    const style = {
-      color: '#000',
-      display: 'inline-block',
-    };
-
-    const btnStyle = {
-      minWidth: 100,
-      width: '100%',
-      transition: 'all 0.5s',
-    };
-
     return (
-      <div style={style} className="fusionexport-dashboard-dl-btn">
-        <button
-          type="button"
-          style={btnStyle}
-          disabled={this.state.isBtnLoading}
-          className="btn btn-primary btn-sm"
-          onClick={this.exportDashboardAction}
-        >
+      <div className="fusionexport-dashboard-dl-btn">
+        <button type="button" disabled={this.state.isBtnLoading} className="btn btn-primary btn-sm" onClick={this.exportDashboardAction}>
           {this.state.isBtnLoading ? <ReactLoading type="bars" color="#fff" height={'25%'} width={'30%'} /> : options.text}
         </button>
       </div>
