@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "@types/downloadjs": "^1.4.1",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "downloadjs": "^1.4.7",
     "react-loading": "^2.0.3"
   }
